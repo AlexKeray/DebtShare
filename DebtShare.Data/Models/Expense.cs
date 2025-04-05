@@ -16,18 +16,18 @@ namespace DebtShare.Data.Models
         public int GroupId { get; set; }
 
         [ForeignKey(nameof(GroupId))]
-        public virtual required Group Group { get; set; }
+        public virtual Group Group { get; set; } = null!;
 
         [Required]
         public required string PayerId { get; set; }
 
         [ForeignKey(nameof(PayerId))]
-        public virtual required ApplicationUser Payer { get; set; }
+        public virtual ApplicationUser Payer { get; set; } = null!;
 
         [Required]
         public required string CreatorId { get; set; }
 
         [ForeignKey(nameof(CreatorId))]
-        public virtual required ApplicationUser Creator { get; set; }
+        public virtual ApplicationUser Creator { get; set; } = null!;
     }
 }

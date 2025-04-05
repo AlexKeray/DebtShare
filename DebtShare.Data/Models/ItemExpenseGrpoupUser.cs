@@ -15,12 +15,12 @@ namespace DebtShare.Data.Models
         public int ItemExpenseId { get; set; }
 
         [ForeignKey(nameof(ItemExpenseId))]
-        public virtual required ItemExpense ItemExpense { get; set; }
+        public virtual ItemExpense ItemExpense { get; set; } = null!;
 
         [Required]
         public int GroupUserId { get; set; }
 
         [ForeignKey(nameof(GroupUserId))]
-        public virtual required GroupUser GroupUser { get; set; }
+        public virtual GroupUser GroupUser { get; set; } = null!;
     }
 }

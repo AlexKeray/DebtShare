@@ -15,12 +15,12 @@ namespace DebtShare.Data.Models
         public int GroupId { get; set; }
 
         [ForeignKey(nameof(GroupId))]
-        public virtual required Group Group { get; set; }
+        public virtual Group Group { get; set; } = null!;
 
         [Required]
         public required string UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]
-        public virtual required ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; } = null!;
     }
 }

@@ -15,13 +15,13 @@ namespace DebtShare.Data.Models
         public required string PayerId { get; set; }
 
         [ForeignKey(nameof(PayerId))]
-        public virtual required ApplicationUser Payer { get; set; }
+        public virtual ApplicationUser Payer { get; set; } = null!;
 
         [Required]
         public required string ReceiverId { get; set; }
 
         [ForeignKey(nameof(ReceiverId))]
-        public virtual required ApplicationUser Receiver { get; set; }
+        public virtual ApplicationUser Receiver { get; set; } = null!;
 
         public DateTime? CreationDate { get; set; } = DateTime.UtcNow;
 

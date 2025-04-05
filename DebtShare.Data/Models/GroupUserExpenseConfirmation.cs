@@ -15,18 +15,18 @@ namespace DebtShare.Data.Models
         public int ExpenseId { get; set; }
 
         [ForeignKey(nameof(ExpenseId))]
-        public virtual required Expense Expense { get; set; }
+        public virtual Expense Expense { get; set; } = null!;
 
         [Required]
         public int GroupUserId { get; set; }
 
         [ForeignKey(nameof(GroupUserId))]
-        public virtual required GroupUser GroupUser { get; set; }
+        public virtual GroupUser GroupUser { get; set; } = null!;
 
         [Required]
         public int ConfirmationStatusId { get; set; }
 
         [ForeignKey(nameof(ConfirmationStatusId))]
-        public virtual required ConfirmationStatus ConfirmationStatus { get; set; }
+        public virtual ConfirmationStatus ConfirmationStatus { get; set; } = null!;
     }
 }

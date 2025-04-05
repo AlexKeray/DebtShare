@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DebtShare.Data.Models.Shared;
 
 namespace DebtShare.Data.Models
@@ -15,7 +10,7 @@ namespace DebtShare.Data.Models
         public required string CreatorId { get; set; }
 
         [ForeignKey(nameof(CreatorId))]
-        public virtual required ApplicationUser Creator { get; set; }
+        public virtual ApplicationUser Creator { get; set; } = null!;
 
         public virtual ICollection<GroupUser> GroupUsers { get; set; } = new List<GroupUser>();
     }
